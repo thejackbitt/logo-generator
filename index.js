@@ -8,21 +8,37 @@ function writeShape(s) {
     } else if (s === 'circle') {
         return '<circle class="st0" cx="150.5" cy="99.5" r="99.5"/>'
     } else if (s === 'triangle') {
-        return '<polygon class="cls-2" points="250 200 50 200 150 0 250 200"/>'
+        return '<polygon class="st0" points="250 200 50 200 150 0 250 200"/>'
     }
 };
+
+function validateHexColor(value) {
+    if (!value.startsWith('#') || value.length !== 7) {
+        return 'Please enter a valid hex code (e.g. #424242)';
+    }
+    return true;
+}
+
+function validateTextLength(value) {
+    if (value.length > 3) {
+        return 'Please enter a maximum of three characters';
+    }
+    return true;
+}
 
 inquirer
     .prompt([
         {
             type: "input",
             message: "Please enter a three-letter acronym that describes your logo",
-            name: "text"
+            name: "text",
+            validate: validateTextLength
         },
         {
-          type: "input",
-          message: "Please enter a hex code for the text color (e.g. #424242)",
-          name: "tColor"
+            type: "input",
+            message: "Please enter a hex code for the text color (e.g. #424242)",
+            name: "tColor",
+            validate: validateHexColor
         },
         {
             type: "list",
@@ -38,10 +54,11 @@ inquirer
             type: "input",
             message: "Please enter a hex code for the shape color (e.g. #424242)",
             name: "sColor",
+            validate: validateHexColor
         }
-        ])
+    ])
     .then((response) => {
-            const { text, tColor, shape, sColor } = response;
+        const { text, tColor, shape, sColor } = response;
 
         const shapeCode = writeShape(shape);
 
@@ -59,14 +76,13 @@ inquirer
             </style>
             ${shapeCode}
             <rect y="40" class="st1" width="300" height="135"/>
-            <text transform="matrix(1 0 0 1 27.0894 139.915)" class="st2 st3 st4">${text}</text>
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" class="st2 st3 st4">${text}</text>
             </svg>`,
             function (err) {
                 if (err) {
                     return console.log(err);
                 }
-                    console.log('SVG logo created successfully.');
-                }
+                console.log('SVG logo created successfully.');
+            }
         )
-    })
-    
+    });
