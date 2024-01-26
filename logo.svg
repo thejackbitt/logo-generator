@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+            <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 300 200" style="enable-background:new 0 0 300 200;" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:#ffffff;}
+                .st1{fill:none;}
+                .st2{fill:#424242;}
+                .st3{font-family:'Verdana-Bold';}
+                .st4{font-size:115.7074px;}
+            </style>
+            <polygon class="cls-2" points="250 200 50 200 150 0 250 200"/>
+            <rect y="40" class="st1" width="300" height="135"/>
+            <text transform="matrix(1 0 0 1 27.0894 139.915)" class="st2 st3 st4">JFK</text>
+            </svg>
