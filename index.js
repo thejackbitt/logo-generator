@@ -1,16 +1,19 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const { Square, Circle, Triangle } = require('./lib/shapes.js');
 
 function writeShape(s) {
-    // console.log('The shape for the logo is ' + s)
-    if (s === 'square') {
-        return '<rect x="50.5" y="0.5" class="st0" width="199" height="199"/>'
-    } else if (s === 'circle') {
-        return '<circle class="st0" cx="150.5" cy="99.5" r="99.5"/>'
-    } else if (s === 'triangle') {
-        return '<polygon class="st0" points="250 200 50 200 150 0 250 200"/>'
+    switch (s) {
+        case 'square':
+            return Square.getSVG();
+        case 'circle':
+            return Circle.getSVG();
+        case 'triangle':
+            return Triangle.getSVG();
+        default:
+            return '';
     }
-};
+}
 
 function validateHexColor(value) {
     if (!value.startsWith('#') || value.length !== 7) {
@@ -86,3 +89,5 @@ inquirer
             }
         )
     });
+
+module.exports = { writeShape };
