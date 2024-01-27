@@ -6,7 +6,7 @@ When run, the script prompts the user with four questions.  Upon filling out tho
 
 ## Video Link
 For a demo on how it works, check out this video:
-https://drive.google.com/file/d/1dKB4wJshGuqrTTMU8uTlx42KVAElRfWf/view?usp=sharing
+https://drive.google.com/file/d/1pQuhMa_vhXHwSJ0Pw7vMqOKbCoXum6rB/view?usp=sharing
 
 ## License
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
